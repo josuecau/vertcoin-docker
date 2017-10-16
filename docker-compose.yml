@@ -1,0 +1,7 @@
+version: '2'
+services:
+  vertcoin:
+    container_name: vertcoin
+    build: .
+    volumes:
+      - /var/vertcoin:/home/vtc/.vertcoin
