@@ -1,4 +1,4 @@
-FROM debian:jessie-slim
+FROM debian:stretch-slim
 
 ARG TZ=Europe/Paris
 ARG VTC_USER=vtc
