@@ -18,6 +18,8 @@ RUN useradd -m -u $VTC_UID $VTC_USER \
   && mv vertcoin-tx /usr/local/bin \
   && rm -f vertcoin-*
 
+EXPOSE 5888 5889
+
 USER $VTC_USER
 WORKDIR /home/$VTC_USER
 

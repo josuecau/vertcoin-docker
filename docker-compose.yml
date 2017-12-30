@@ -1,7 +1,9 @@
-version: '2'
+version: "2"
 services:
   vertcoin:
     container_name: vertcoin
     build: .
+    ports:
+      - "5889:5889"
     volumes:
       - /var/vertcoin:/home/vtc/.vertcoin
