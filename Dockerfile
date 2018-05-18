@@ -17,7 +17,7 @@ RUN useradd -m -u $VTC_UID $VTC_USER \
   && apt-get -qq -y install wget unzip gpg \
   && wget -q ${VTC_URL}/${VTC_VERSION}/${VTC_ARCHIVE} \
   && wget -q ${VTC_URL}/${VTC_VERSION}/${VTC_SIG} \
-  && gpg --keyserver pgp.mit.edu --receive-keys ${VTC_PGP} \
+  && gpg --keyserver ha.pool.sks-keyservers.net --receive-keys ${VTC_PGP} \
   && gpg --verify ${VTC_SIG} ${VTC_ARCHIVE} \
   && unzip -d ${VTC_BIN} ${VTC_ARCHIVE} \
   && chmod -R +x ${VTC_BIN} \
