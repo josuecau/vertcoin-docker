@@ -3,7 +3,7 @@ FROM debian:stretch-slim
 ARG TZ=Europe/Paris
 ARG VTC_USER=vtc
 ARG VTC_UID=1000
-ARG VTC_VERSION=0.13.3
+ARG VTC_VERSION=0.14.0
 ARG VTC_ARCHIVE=vertcoind-v${VTC_VERSION}-linux-amd64.zip
 ARG VTC_SIG=${VTC_ARCHIVE}.sig
 ARG VTC_URL=https://github.com/vertcoin-project/vertcoin-core/releases/download
