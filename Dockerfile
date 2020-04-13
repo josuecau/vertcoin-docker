@@ -1,9 +1,9 @@
-FROM debian:stretch-slim
+FROM debian:buster-slim
 
 ARG TZ=Europe/Paris
 ARG VTC_USER=vtc
 ARG VTC_UID=1000
-ARG VTC_VERSION=0.14.0
+ARG VTC_VERSION=0.15.0.1
 ARG VTC_ARCHIVE=vertcoind-v${VTC_VERSION}-linux-amd64.zip
 ARG VTC_SIG=${VTC_ARCHIVE}.sig
 ARG VTC_URL=https://github.com/vertcoin-project/vertcoin-core/releases/download
@@ -17,7 +17,7 @@ RUN useradd -m -u $VTC_UID $VTC_USER \
   && apt-get -qq -y install wget unzip gpg \
   && wget -q ${VTC_URL}/${VTC_VERSION}/${VTC_ARCHIVE} \
   && wget -q ${VTC_URL}/${VTC_VERSION}/${VTC_SIG} \
-  && gpg --keyserver pgp.mit.edu --receive-keys ${VTC_PGP} \
+  && gpg --keyserver keyserver.ubuntu.com --receive-keys ${VTC_PGP} \
   && gpg --verify ${VTC_SIG} ${VTC_ARCHIVE} \
   && unzip -d ${VTC_BIN} ${VTC_ARCHIVE} \
   && chmod -R +x ${VTC_BIN} \
